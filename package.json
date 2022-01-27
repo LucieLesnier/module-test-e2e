@@ -15,6 +15,6 @@
     "puppeteer": "^1.20.0"
   },
   "Node.js": {
-    "name": "npm-publish.yml"
+    "name": "node.js.yml"
   }
 }
