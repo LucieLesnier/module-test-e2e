@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    env:
+    environnement:
     TESTED_WEBSITE="https://www.saucedemo.com/"
     TEST_LOGIN="standard_user"
     TEST_PASSWORD="secret_sauce"
