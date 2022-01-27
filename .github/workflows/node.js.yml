@@ -8,6 +8,10 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  env:
+      TESTED_WEBSITE="https://www.saucedemo.com/"
+      TEST_LOGIN="standard_user"
+      TEST_PASSWORD="secret_sauce"
 
 jobs:
   build:
