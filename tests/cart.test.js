@@ -32,9 +32,9 @@ describe("Cart features", () => {
         await page.screenshot({path: './tests/img/CartToCheckout.png'});
 
 
-        await page.type('#first-name', 'Name');
-        await page.type('#last-name', 'LastName');
-        await page.type('#postal-code', '74000');
+        await page.type('input[id=first-name]', 'Name');
+        await page.type('input[id=last-name]', 'LastName');
+        await page.type('input[id=postal-code]', '74000');
         await page.click('input[data-test=continue]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/HaveWeClick.png'});
