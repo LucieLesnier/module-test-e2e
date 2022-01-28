@@ -20,8 +20,8 @@ describe("Checkout process", () => {
         const htmlM = await page.$eval('body', e => e.innerHTML);
         const href = expect(html).toContain('a');
         await page.screenshot({path: './tests/img/OkDone.png'});
-        await page.click('img');
-        await page.click('.inventory_item_name', href);
+        await page.click('#item_4_img_link');
+        await page.click('#item_4_title_link');
 
         page.evaluate(() => window.open('https://www.saucedemo.com/inventory.html?id=4'));
 
