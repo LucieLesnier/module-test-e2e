@@ -20,7 +20,6 @@ describe("Cart features", () => {
         const button = expect(htmlM).toContain('button');
         page.click('button[data-test=add-to-cart-sauce-labs-backpack]', button);
 
-
         // à compléter
 
         await page.screenshot({path: './tests/img/WhereAreWe.png'});
@@ -30,7 +29,6 @@ describe("Cart features", () => {
         page.click('button[data-test=checkout]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/CartToCheckout.png'});
-
 
         await page.type('input[id=first-name]', 'Name');
         await page.type('input[id=last-name]', 'LastName');
@@ -45,16 +43,13 @@ describe("Cart features", () => {
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/BackToProductAfterOrder.png'});
 
-
     }, timeout);
-
 
     // cette fonction est lancée avant chaque test de cette
     // série de tests
     beforeAll(async () => {
         // ouvrir un onglet dans le navigateur
         page = await global.__BROWSER__.newPage()
-
 
     }, timeout)
 
