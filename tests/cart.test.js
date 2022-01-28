@@ -16,7 +16,8 @@ describe("Cart features", () => {
         await page.click('input[type=submit]');
         const htmlM = await page.$eval('body', e => e.innerHTML);
         const href = expect(html).toContain('a');
-        await page.click('a[id=item_4_img_link]', href);
+        await page.click('img', href);
+        await page.click('.inventory_item_name', href);
         const button = expect(htmlM).toContain('button');
         page.click('button[data-test=add-to-cart-sauce-labs-backpack]', button);
 
