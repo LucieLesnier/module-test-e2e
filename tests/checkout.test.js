@@ -20,6 +20,7 @@ describe("Checkout process", () => {
         const htmlM = await page.$eval('body', e => e.innerHTML);
         const href = expect(html).toContain('a');
         await page.screenshot({path: './tests/img/OkDone.png'});
+        await page.waitForSelector('body');
         await page.click('img', href);
         await page.click('.inventory_item_name', href);
 
