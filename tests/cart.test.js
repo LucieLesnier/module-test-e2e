@@ -38,10 +38,10 @@ describe("Cart features", () => {
         await page.click('input[data-test=continue]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/HaveWeClick.png'});
-        page.click('button[data-test=finish]', button);
+        page.click('button[data-test=finish]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/OrderFinish.png'});
-        page.click('button[data-test=back-to-products]', button);
+        page.click('button[data-test=back-to-products]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/BackToProductAfterOrder.png'});
 
