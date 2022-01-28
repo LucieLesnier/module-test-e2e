@@ -24,10 +24,10 @@ describe("Cart features", () => {
         // à compléter
 
         await page.screenshot({path: './tests/img/WhereAreWe.png'});
-        page.click('#shopping_cart_container', href);
+        page.click('#shopping_cart_container');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/WhereAreWeNow.png'});
-        page.click('button[data-test=checkout]', button);
+        page.click('button[data-test=checkout]');
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/CartToCheckout.png'});
 
