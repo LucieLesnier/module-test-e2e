@@ -21,17 +21,17 @@ describe("Checkout process", () => {
         const href = expect(html).toContain('a');
         await page.screenshot({path: './tests/img/OkDone.png'});
         await page.waitForSelector('body');
-        await page.click('img', href);
-        await page.click('.inventory_item_name', href);
-
-        page.evaluate(() => window.open('https://www.saucedemo.com/inventory.html?id=4'));
+        await page.click("img[alt='Sauce Labs Bike Light']");
 
         const button = expect(htmlM).toContain('button');
-        page.click('button[data-test=add-to-cart-sauce-labs-backpack]');
+        await page.waitFor(1000);
+        await page.screenshot({path: './tests/img/wth.png'});
+        await page.click("button[data-test='add-to-cart-sauce-labs-bike-light']");
+
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/AddToCart.png'});
         await page.waitFor(1000);
-        page.click('button[data-test=remove-sauce-labs-backpack]', button);
+        page.click('button[data-test=remove-sauce-labs-bike-light]', button);
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/RemoveFromCart.png'});
         const backTo = expect(htmlM).toContain('button');
@@ -51,7 +51,6 @@ describe("Checkout process", () => {
         page.click('#react-burger-cross-btn', button);
         await page.waitFor(1000);
         await page.screenshot({path: './tests/img/BackToItems.png'});
-
 
 
     }, timeout);
